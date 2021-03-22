@@ -7,8 +7,6 @@ function LandingPage() {
 
     const [Movies, setMovies] = useState([])
     const [MainMovieImage, setMainMovieImage] = useState(null)
-    //밑에 MainMovieImage 
-    console.log('MainMovieImage', MainMovieImage)
 
     useEffect(() => {
         const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
@@ -21,7 +19,7 @@ function LandingPage() {
         .then(response => {
             console.log([response.results[0]])
             setMovies([...Movies, ...response.results])
-            setMainMovieImage([response.results[0]])
+            setMainMovieImage(response.results[0])
         })
     }
 
@@ -30,7 +28,6 @@ function LandingPage() {
             {/* Main Image */}
             {MainMovieImage &&
                 <MainImage
-                    // MainMovieImage.정보가 다 undefined 으로 뜨는데 Sections/Mainimage.js에서도정보안옴
                     image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
                     title={MainMovieImage.original_title}
                     text={MainMovieImage.overview}
