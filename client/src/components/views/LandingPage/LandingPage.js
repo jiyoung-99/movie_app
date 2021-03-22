@@ -30,7 +30,7 @@ function LandingPage() {
             {/* Main Image */}
             {MainMovieImage &&
                 <MainImage
-                    
+                    // MainMovieImage.정보가 다 undefined 으로 뜨는데 Sections/Mainimage.js에서도정보안옴
                     image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
                     title={MainMovieImage.original_title}
                     text={MainMovieImage.overview}
