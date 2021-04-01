@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { API_URL, API_KEY, IMAGE_BASE_URL} from '../../Config'
 import MainImage from '../LandingPage/Sections/MainImage'
+import MovieInfo from './Sections/MovieInfo'
 
 function MovieDetail(props) {
 
@@ -35,8 +36,13 @@ function MovieDetail(props) {
             {/* body */}    
             <div stype={{width:'85%', margin: '1rem auto'}}>
             
+            {/*Movie info*/}
+            <MovieInfo
+                movie={Movie}
+            />
                 <br/>
                 {/* Action grid */}
+                
 
             <div style={{display:'flex', justifyContent:'center', margin:'2rem'}}>
                 <button>Toggle Actor View</button>
